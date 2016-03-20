@@ -9,6 +9,7 @@
 *.cmxa
 *.pyc
 *~
+a.out
 
 # ocamlbuild working directory
 _build/
