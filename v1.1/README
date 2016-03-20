@@ -1,0 +1,17 @@
+La compilation requiert une installation OCaml complète.
+Paquets (Ubuntu 14.04) additionnels requis pour la compilation :
+libcairo-ocaml-dev
+libxml-light-ocaml-dev
+
+Compilation :
+$ make
+
+Utilisation :
+$ ./masines.out [pdf|svg|tikz] in.xml > out
+
+Les paramètres de simulation et de sortie doivent être présents dans le fichier de description XML (cf. exemples).
+
+Formats de sortie :
+ - le format "pdf" produit directement un fichier PDF en utilisant la librairie de dessin vectoriel Cairo ;
+ - le format "svg" produit un fichier SVG (dessin vectoriel XML) ; probablement le plus approprié pour tout post-traitement automatique du diagramme ;
+ - le format "tikz" produit un code PGF/TikZ pour compilation du diagramme avec LaTeX ; ce format est actuellement le seul à prendre en charge l'étiquetage des signaux.

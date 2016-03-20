@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<signalMachine>
+
+<!-- META-SIGNAUX -->
+<meta_signal id="zig" speed="1" style="stroke:blue"></meta_signal>
+<meta_signal id="zag" speed="-1" style="stroke:blue"></meta_signal>
+<meta_signal id="ZIG" speed="1" style="stroke:red"></meta_signal>
+<meta_signal id="w0" speed="0" style="stroke:black"></meta_signal>
+<meta_signal id="wa" speed="0" style="stroke:black"></meta_signal>
+<meta_signal id="wb" speed="0" style="stroke:black"></meta_signal>
+
+<!-- REGLES DE COLLISION -->
+<rule><in idref="zig" /><in idref="wb" /><out idref="zag" /><out idref="wb" /><out idref="ZIG" /></rule>
+<rule><in idref="w0" /><in idref="zag" /><out idref="w0" /><out idref="zig" /></rule>
+<rule><in idref="wa" /><in idref="ZIG" /><out idref="zag" /></rule>
+<rule><in idref="wb" /><in idref="zag" /><out idref="zag" /><out idref="wa" /></rule>
+<rule><in idref="zig" /><in idref="zag" /><out idref="zag" /><out idref="wb" /></rule>
+<rule><in idref="ZIG" /><in idref="zag" /><out idref="zag" /></rule>
+<rule><in idref="zig" /><in idref="wb" /><in idref="zag" /><out idref="zag" /><out idref="w0" /></rule>
+<rule><in idref="w0" /><in idref="zig" /><out idref="w0" /></rule>
+
+<!-- CONFIGURATION INITIALE -->
+<start idref="w0" pos="0" />
+<start idref="zig" pos="0" />
+<start idref="wb" pos="4" />
+<start idref="wa" pos="8" />
+
+</signalMachine>

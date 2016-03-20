@@ -1,0 +1,13 @@
+Le programme produit du code tikz a partir de descriptions de machines au format naif .smt.
+Pour utiliser les descriptions XML de H, le script python xml2smt.py effectue la conversion vers le format .smt.
+
+
+* Conversion .xml --> .smt :
+$ python xml2smt.py in.xml > out.smt
+
+
+* Simulation de machines :
+$ ./masines_tikz.out nb_iter tps_max label_iter_inf < machine.smt > code.tex
+avec nb_iter et label_iter_inf des entiers
+et tps_max un entier ou rationnel
+N.B. Le nb_iter est prioritaire sur tps_max donc tps_max ne sert qu'a continuer l'affichage du diagramme apres le dernier front de collisions. 

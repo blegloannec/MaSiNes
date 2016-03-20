@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<signalMachine>
+
+<simulation iterations="20" max_time="0" />
+<output width="500" height="500" zoom_h="500." zoom_v="950." trans_h="0." />
+
+<!-- META-SIGNAUX -->
+<meta_signal id="wl" speed="1" svg_style="stroke:black;stroke-width:2;stroke-dasharray:8,2"></meta_signal>
+<meta_signal id="wr" speed="-1" svg_style="stroke:black;stroke-width:2;stroke-dasharray:8,2"></meta_signal>
+<meta_signal id="sl" speed="-5" svg_style="stroke:red"></meta_signal>
+<meta_signal id="sr" speed="5" svg_style="stroke:red"></meta_signal>
+
+
+<!-- REGLES DE COLLISION -->
+<rule><in idref="sr" /><in idref="wr" /><out idref="sl" /><out idref="wr" /></rule>
+<rule><in idref="sl" /><in idref="wl" /><out idref="sr" /><out idref="wl" /></rule>
+<rule><in idref="wr" /><in idref="wl" /></rule>
+
+
+<!-- CONFIGURATION INITIALE -->
+<start idref="wl" pos="0" />
+<start idref="sr" pos="0" />
+<start idref="wr" pos="1" />
+
+</signalMachine>

@@ -1,0 +1,3 @@
+Visionneur élémentaire en Python, utilisant la librairie pygame, des
+fichiers SVG 3D (*.svg3d), extension sauvage du format XML SVG (2D) à la 3D,
+produits par MaSiNeS 2D.

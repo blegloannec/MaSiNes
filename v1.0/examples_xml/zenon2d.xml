@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<signalMachine>
+
+<!-- META-SIGNAUX -->
+<meta_signal id="zz" speedx="1" speedy="1"><color rgb="167216"/></meta_signal>
+<meta_signal id="zu" speedx="1" speedy="-1"><color rgb="167216"/></meta_signal>
+<meta_signal id="uz" speedx="-1" speedy="1"><color rgb="167216"/></meta_signal>
+<meta_signal id="uu" speedx="-1" speedy="-1"><color rgb="167216"/></meta_signal>
+<meta_signal id="a1" speedx="15" speedy="1" style="stroke:red"></meta_signal>
+<meta_signal id="a2" speedx="-1" speedy="15" style="stroke:red"></meta_signal>
+<meta_signal id="a3" speedx="-15" speedy="-1" style="stroke:red"></meta_signal>
+<meta_signal id="a4" speedx="1" speedy="-15" style="stroke:red"></meta_signal>
+
+<!-- REGLES DE COLLISION -->
+<rule><in idref="uz" /><in idref="a1" /><out idref="uz" /><out idref="a2" /></rule>
+<rule><in idref="uu" /><in idref="a2" /><out idref="uu" /><out idref="a3" /></rule>
+<rule><in idref="zu" /><in idref="a3" /><out idref="zu" /><out idref="a4" /></rule>
+<rule><in idref="zz" /><in idref="a4" /><out idref="zz" /><out idref="a1" /></rule>
+
+
+<!-- CONFIGURATION INITIALE -->
+<start idref="zz" posx="0" posy="0" />
+<start idref="a1" posx="0" posy="0" />
+<start idref="zu" posx="0" posy="1" />
+<start idref="uz" posx="1" posy="0" />
+<start idref="uu" posx="1" posy="1" />
+
+</signalMachine>

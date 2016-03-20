@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<signalMachine>
+
+<!-- META-SIGNAUX -->
+<meta_signal id="genB" speed="1/6" style="stroke:grey"></meta_signal>
+<meta_signal id="w" speed="0" style="stroke:grey"></meta_signal>
+<meta_signal id="genH" speed="1/6" style="stroke:violet"></meta_signal>
+<meta_signal id="rebG" speed="-1/2" style="stroke:cyan"></meta_signal>
+<meta_signal id="rebD" speed="1/2" style="stroke:cyan"></meta_signal>
+<meta_signal id="zig" speed="1" style="stroke:green"></meta_signal>
+<meta_signal id="zag" speed="-1" style="stroke:green"></meta_signal>
+<meta_signal id="kill" speed="-1" style="stroke:red"></meta_signal>
+
+
+<!-- REGLES DE COLLISION -->
+<rule><in idref="rebD" /><in idref="genB" /><out idref="w" /><out idref="genB" /></rule>
+<rule><in idref="genH" /><in idref="w" /><out idref="zag" /><out idref="rebG" /><out idref="w" /><out idref="genH" /></rule>
+<rule><in idref="w" /><in idref="rebG" /><out idref="w" /><out idref="rebD" /></rule>
+<rule><in idref="zig" /><in idref="w" /><out idref="zag" /><out idref="w" /></rule>
+<rule><in idref="w" /><in idref="zag" /><out idref="w" /><out idref="zig" /></rule>
+<rule><in idref="zig" /><in idref="w" /><in idref="rebG" /><out idref="zag" /><out idref="w" /><out idref="rebD" /></rule> <!-- utile ? -->
+<rule><in idref="w" /><in idref="rebG" /><in idref="zag" /><out idref="w" /><out idref="rebD" /><out idref="zig" /></rule> <!-- utile ? -->
+<rule><in idref="zig" /><in idref="rebD" /><in idref="w" /><out idref="zag" /><out idref="w" /><out idref="rebD" /></rule>
+<rule><in idref="w" /><in idref="zag" /><out idref="kill" /><out idref="w" /><out idref="zig" /></rule>
+<rule><in idref="zig" /><in idref="w" /><in idref="kill" /><out idref="zag" /><out idref="w" /></rule>
+
+
+
+<!-- CONFIGURATION INITIALE -->
+<start idref="w" pos="0" />
+<start idref="w" pos="1" />
+<start idref="zag" pos="1/2" />
+<start idref="w" pos="5/2" />
+<start idref="zag" pos="5/2" />
+<start idref="rebG" pos="5/2" />
+<start idref="genH" pos="5/2" />
+<start idref="genB" pos="19/6" />
+
+</signalMachine>

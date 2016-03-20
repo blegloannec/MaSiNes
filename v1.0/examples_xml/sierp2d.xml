@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<signalMachine>
+
+<!-- META-SIGNAUX -->
+<meta_signal id="Z0" speedx="0" speedy="0" style="stroke:red"></meta_signal>
+<meta_signal id="X0" speedx="0" speedy="0" style="stroke:red"></meta_signal>
+<meta_signal id="Y0" speedx="0" speedy="0" style="stroke:red"></meta_signal>
+<meta_signal id="ZX" speedx="1" speedy="0" style="stroke:blue;stroke-dasharray:1,1"></meta_signal>
+<meta_signal id="ZY" speedx="0" speedy="1" style="stroke:blue;stroke-dasharray:1,1"></meta_signal>
+<meta_signal id="XZ" speedx="-1" speedy="0" style="stroke:blue;stroke-dasharray:1,1"></meta_signal>
+<meta_signal id="XY" speedx="-1" speedy="1" style="stroke:blue;stroke-dasharray:1,1"></meta_signal>
+<meta_signal id="YZ" speedx="0" speedy="-1" style="stroke:blue;stroke-dasharray:1,1"></meta_signal>
+<meta_signal id="YX" speedx="1" speedy="-1" style="stroke:blue;stroke-dasharray:1,1"></meta_signal>
+<meta_signal id="ZX2" speedx="2" speedy="0" style="stroke:gray;stroke-dasharray:2,2"></meta_signal>
+<meta_signal id="ZY2" speedx="0" speedy="2" style="stroke:gray;stroke-dasharray:2,2"></meta_signal>
+<meta_signal id="XZ2" speedx="-2" speedy="0" style="stroke:gray;stroke-dasharray:2,2"></meta_signal>
+<meta_signal id="XY2" speedx="-2" speedy="2" style="stroke:gray;stroke-dasharray:2,2"></meta_signal>
+<meta_signal id="YZ2" speedx="0" speedy="-2" style="stroke:gray;stroke-dasharray:2,2"></meta_signal>
+<meta_signal id="YX2" speedx="2" speedy="-2" style="stroke:gray;stroke-dasharray:2,2"></meta_signal>
+<meta_signal id="MXY" speedx="0" speedy="0" style="stroke:yellow"></meta_signal>
+<meta_signal id="MXZ" speedx="0" speedy="0" style="stroke:yellow"></meta_signal>
+<meta_signal id="MYZ" speedx="0" speedy="0" style="stroke:yellow"></meta_signal>
+
+
+<!-- REGLES DE COLLISION -->
+<rule><in idref="XZ" /><in idref="ZX" /><out idref="MXZ" />
+<out idref="XZ" /><out idref="XY" /><out idref="ZY" /><out idref="ZX" />
+<out idref="XZ2" /><out idref="XY2" /><out idref="ZY2" /><out idref="ZX2" /></rule>
+
+<rule><in idref="YZ" /><in idref="ZY" /><out idref="MYZ" />
+<out idref="YZ" /><out idref="ZY" /><out idref="ZX" /><out idref="YX" />
+<out idref="YZ2" /><out idref="ZY2" /><out idref="ZX2" /><out idref="YX2" /></rule>
+
+<rule><in idref="XY" /><in idref="YX" /><out idref="MXY" />
+<out idref="XY" /><out idref="XZ" /><out idref="YX" /><out idref="YZ" />
+<out idref="XY2" /><out idref="XZ2" /><out idref="YX2" /><out idref="YZ2" /></rule>
+
+
+<rule><in idref="Z0" /><in idref="XZ2" /><in idref="YZ2" /><out idref="Z0" />
+<out idref="ZX" /><out idref="ZY" />
+<out idref="ZX2" /><out idref="ZY2" /></rule>
+
+<rule><in idref="Y0" /><in idref="ZY2" /><in idref="XY2" /><out idref="Y0" />
+<out idref="YZ" /><out idref="YX" />
+<out idref="YZ2" /><out idref="YX2" /></rule>
+
+<rule><in idref="X0" /><in idref="YX2" /><in idref="ZX2" /><out idref="X0" />
+<out idref="XY" /><out idref="XZ" />
+<out idref="XY2" /><out idref="XZ2" /></rule>
+
+
+<rule><in idref="MXZ" /><in idref="ZX2" /><in idref="YX2" /><in idref="XZ2" /><in idref="YZ2" />
+<out idref="MXZ" /><out idref="XZ" /><out idref="XY" /><out idref="ZY" /><out idref="ZX" />
+<out idref="XZ2" /><out idref="XY2" /><out idref="ZY2" /><out idref="ZX2" /></rule>
+
+<rule><in idref="MYZ" /><in idref="XY2" /><in idref="ZY2" /><in idref="XZ2" /><in idref="YZ2" /><out idref="MYZ" />
+<out idref="YZ" /><out idref="ZY" /><out idref="ZX" /><out idref="YX" />
+<out idref="YZ2" /><out idref="ZY2" /><out idref="ZX2" /><out idref="YX2" /></rule>
+
+<rule><in idref="MXY" /><in idref="ZX2" /><in idref="YX2" /><in idref="ZY2" /><in idref="XY2" /><out idref="MXY" />
+<out idref="XY" /><out idref="XZ" /><out idref="YX" /><out idref="YZ" />
+<out idref="XY2" /><out idref="XZ2" /><out idref="YX2" /><out idref="YZ2" /></rule>
+
+<!-- CONFIGURATION INITIALE -->
+<start idref="Z0" posx="0" posy="0" />
+<start idref="ZX" posx="0" posy="0" />
+<start idref="ZY" posx="0" posy="0" />
+<start idref="ZX2" posx="0" posy="0" />
+<start idref="ZY2" posx="0" posy="0" />
+<start idref="X0" posx="1" posy="0" />
+<start idref="XZ" posx="1" posy="0" />
+<start idref="XY" posx="1" posy="0" />
+<start idref="XZ2" posx="1" posy="0" />
+<start idref="XY2" posx="1" posy="0" />
+<start idref="Y0" posx="0" posy="1" />
+<start idref="YZ" posx="0" posy="1" />
+<start idref="YX" posx="0" posy="1" />
+<start idref="YZ2" posx="0" posy="1" />
+<start idref="YX2" posx="0" posy="1" />
+
+</signalMachine>

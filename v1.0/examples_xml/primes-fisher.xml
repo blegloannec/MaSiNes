@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<signalMachine>
+
+<!-- Crible d'Eratosthene en temps reel (9 signaux)
+On genere des murs espaces de 2, 3, 4, 5, etc. Entre 2 murs consecutifs espaces de n, on dessine un zig-zag pour marquer les multiples de n.
+Le mur de rang n apparait au point (n(n+1)/2,n(n+1)/4), on lance alors un premier signal depuis ce point pour marquer un multiple de n.
+Puis le zig-zag ainsi initie marquera tous les multiples suivants. Le premier nombre marque est n(n+1)/2 (qui est <= n^2 donc on marque assez tot).
+Comme n(n+1)/2 = 0 [n] pour n impair, c'est bien cale. Pour n pair en revanche, n(n+1)/2 = n/2 [n] et il faudrait un autre calage pour lancer
+le zig-zag, ce qui necessiterait des signaux supplementaires. Comme on a deja tous les pairs avec 2, on choisit plutot de ne pas lancer le zig-zag
+aux rangs pairs >2.
+-->
+
+<!-- META-SIGNAUX -->
+<meta_signal id="genB" speed="2" style="stroke:grey"></meta_signal>
+<meta_signal id="w" speed="0" style="stroke:grey"></meta_signal>
+<meta_signal id="genH0" speed="2" style="stroke:violet"></meta_signal>
+<meta_signal id="genH1" speed="2" style="stroke:violet"></meta_signal>
+<meta_signal id="rebG" speed="-6" style="stroke:cyan"></meta_signal>
+<meta_signal id="rebD" speed="6" style="stroke:cyan"></meta_signal>
+<meta_signal id="zig" speed="2" style="stroke:green"></meta_signal>
+<meta_signal id="zag" speed="-2" style="stroke:green"></meta_signal>
+<meta_signal id="kill" speed="-2" style="stroke:orange"></meta_signal>
+
+
+<!-- REGLES DE COLLISION -->
+<rule><in idref="rebD" /><in idref="genB" /><out idref="w" /><out idref="genB" /></rule>
+<rule><in idref="genH1" /><in idref="w" /><out idref="rebG" /><out idref="zag" /><out idref="w" /><out idref="genH0" /></rule>
+<rule><in idref="genH0" /><in idref="w" /><out idref="rebG" /><out idref="w" /><out idref="genH1" /></rule>
+<rule><in idref="w" /><in idref="zig" /><out idref="w" /><out idref="zag" /></rule>
+<rule><in idref="w" /><in idref="rebG" /><out idref="w" /><out idref="rebD" /></rule>
+<rule><in idref="zig" /><in idref="w" /><in idref="rebG" /><out idref="zag" /><out idref="w" /><out idref="rebD" /></rule> <!-- utile ? -->
+<rule><in idref="w" /><in idref="rebG" /><in idref="zag" /><out idref="w" /><out idref="rebD" /><out idref="zig" /></rule> <!-- utile ? -->
+<rule><in idref="w" /><in idref="zag" /><out idref="kill" /><out idref="w" /><out idref="zig" /></rule>
+<rule><in idref="zig" /><in idref="w" /><in idref="kill" /><out idref="zag" /><out idref="w" /></rule>
+
+
+<!-- CONFIGURATION INITIALE -->
+<start idref="w" pos="0" /> <!-- inutile mais volontaire -->
+<start idref="w" pos="1" />
+<start idref="zig" pos="1" />
+<start idref="w" pos="3" />
+<start idref="rebG" pos="3" />
+<start idref="genH1" pos="3" />
+<start idref="genB" pos="11/3" />
+
+</signalMachine>

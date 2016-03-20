@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<signalMachine>
+
+<!-- META-SIGNAUX -->
+<meta_signal id="0d" speed="1" style="stroke:red;stroke-dasharray:5,5"></meta_signal>
+<meta_signal id="0g" speed="-1" style="stroke:red;stroke-dasharray:5,5"></meta_signal>
+<meta_signal id="1d" speed="1" style="stroke:green;stroke-dasharray:15,5"></meta_signal>
+<meta_signal id="1g" speed="-1" style="stroke:green;stroke-dasharray:15,5"></meta_signal>
+<meta_signal id="2d" speed="1" style="stroke:blue"></meta_signal>
+<meta_signal id="2g" speed="-1" style="stroke:blue"></meta_signal>
+<meta_signal id="w" speed="0" style="stroke:gray"></meta_signal>
+
+
+<!-- REGLES DE COLLISION -->
+<rule><in idref="0d" /><in idref="1g" /><out idref="0g" /><out idref="1d" /></rule>
+<rule><in idref="0d" /><in idref="2g" /><out idref="0g" /><out idref="2d" /></rule>
+<rule><in idref="1d" /><in idref="2g" /><out idref="1g" /><out idref="2d" /></rule>
+<rule><in idref="0d" /><in idref="w" /><out idref="0g" /><out idref="w" /></rule>
+<rule><in idref="1d" /><in idref="w" /><out idref="1g" /><out idref="w" /></rule>
+<rule><in idref="2d" /><in idref="w" /><out idref="2g" /><out idref="w" /></rule>
+<rule><in idref="w" /><in idref="0g" /><out idref="w" /><out idref="0d" /></rule>
+<rule><in idref="w" /><in idref="1g" /><out idref="w" /><out idref="1d" /></rule>
+<rule><in idref="w" /><in idref="2g" /><out idref="w" /><out idref="2d" /></rule>
+
+
+<!-- CONFIGURATION INITIALE -->
+<start idref="w" pos="1/2" />
+<start idref="1d" pos="1" />
+<start idref="2g" pos="2" />
+<start idref="0d" pos="3" />
+<start idref="2g" pos="4" />
+<start idref="1d" pos="5" />
+<start idref="0g" pos="6" />
+<start idref="1d" pos="7" />
+<start idref="2g" pos="8" />
+<start idref="0d" pos="9" />
+<start idref="2g" pos="10" />
+<start idref="1d" pos="11" />
+<start idref="0g" pos="12" />
+<start idref="w" pos="25/2" />
+
+</signalMachine>

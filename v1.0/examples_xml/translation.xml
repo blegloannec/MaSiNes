@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<signalMachine>
+
+<!-- META-SIGNAUX -->
+<meta_signal id="w" speed="0" style="stroke-dasharray:2,2"></meta_signal>
+<meta_signal id="s" speed="0" style="stroke:red"></meta_signal>
+<meta_signal id="S" speed="-1"></meta_signal>
+<meta_signal id="a1" speed="1/2"></meta_signal>
+<meta_signal id="a2" speed="2"></meta_signal>
+
+<!-- REGLES DE COLLISION -->
+<rule><in idref="s" /><in idref="a1" /><out idref="S" /><out idref="a1" /></rule>
+<rule><in idref="S" /><in idref="a2" /><out idref="s" /><out idref="a2" /></rule>
+
+<!-- CONFIGURATION INITIALE -->
+<start idref="w" pos="0" />
+<start idref="w" pos="1/2" />
+<start idref="w" pos="1" />
+<start idref="s" pos="3/4" />
+<start idref="a1" pos="0" />
+<start idref="a2" pos="0" />
+
+</signalMachine>

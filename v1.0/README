@@ -1,0 +1,28 @@
+Le programme produit des images au format SVG a partir de descriptions de machines au format naif .sm.
+Pour utiliser les descriptions XML de H, le script python xml2sm.py effectue la conversion vers le format .sm.
+
+
+* Conversion .xml --> .sm :
+$ python xml2sm.py in.xml > out.sm
+
+Ajouter au passage des infos de style a tous les signaux :
+$ python xml2sm.py in.xml ';stroke-width:0.5' > out.sm
+
+
+* Compilation :
+$ make
+
+
+* Simulation de machines :
+$ ./masines.out nb_iter tps_max img_h img_v zoom_h zoom_v trans_h < machine.sm > image.svg
+avec nb_iter, img_h, img_v des entiers
+et tps_max un entier ou rationnel
+et zoom_h, zoom_v, trans_h des flottants
+N.B. Le nb_iter est prioritaire sur tps_max donc tps_max ne sert qu'a continuer l'affichage du diagramme apres le dernier front de collisions. 
+
+Exemples : cf Makefile (make adder1/test4/koch_2)
+
+
+* Generer une machine aleatoire (experimental) :
+$ python alea_xml.py nb_etats > out.xml
+N.B. Modifier les autres parametres a l'interieur du script.
