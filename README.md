@@ -7,7 +7,7 @@ MaSiNes is a lightweight *Signal Machine* simulator written in modular OCaml.
 
 MaSiNes was originally written for the sake of fun. It is however simple and fast and has been used by a former colleague in his research work, to generate figures for scientific articles and a PhD thesis.
 
-![Primes sieve](/img/primes.svg)
+![Prime sieve](/img/primes.png)
 
 ## Requirements
 
