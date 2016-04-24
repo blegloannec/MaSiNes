@@ -5,12 +5,21 @@
 <meta_signal id="Z0" speedx="0" speedy="0" style="stroke:red"></meta_signal>
 <meta_signal id="X0" speedx="0" speedy="0" style="stroke:red"></meta_signal>
 <meta_signal id="Y0" speedx="0" speedy="0" style="stroke:red"></meta_signal>
+
+<meta_signal id="ZX" speedx="1" speedy="0" style="stroke:blue"></meta_signal>
+<meta_signal id="ZY" speedx="0" speedy="1" style="stroke:blue"></meta_signal>
+<meta_signal id="XZ" speedx="-1" speedy="0" style="stroke:blue"></meta_signal>
+<meta_signal id="XY" speedx="-1" speedy="1" style="stroke:blue"></meta_signal>
+<meta_signal id="YZ" speedx="0" speedy="-1" style="stroke:blue"></meta_signal>
+<meta_signal id="YX" speedx="1" speedy="-1" style="stroke:blue"></meta_signal>
+<!--
 <meta_signal id="ZX" speedx="1" speedy="0" style="stroke:blue;stroke-dasharray:1,1"></meta_signal>
 <meta_signal id="ZY" speedx="0" speedy="1" style="stroke:blue;stroke-dasharray:1,1"></meta_signal>
 <meta_signal id="XZ" speedx="-1" speedy="0" style="stroke:blue;stroke-dasharray:1,1"></meta_signal>
 <meta_signal id="XY" speedx="-1" speedy="1" style="stroke:blue;stroke-dasharray:1,1"></meta_signal>
 <meta_signal id="YZ" speedx="0" speedy="-1" style="stroke:blue;stroke-dasharray:1,1"></meta_signal>
 <meta_signal id="YX" speedx="1" speedy="-1" style="stroke:blue;stroke-dasharray:1,1"></meta_signal>
+-->
 <meta_signal id="ZX2" speedx="2" speedy="0" style="stroke:gray;stroke-dasharray:2,2"></meta_signal>
 <meta_signal id="ZY2" speedx="0" speedy="2" style="stroke:gray;stroke-dasharray:2,2"></meta_signal>
 <meta_signal id="XZ2" speedx="-2" speedy="0" style="stroke:gray;stroke-dasharray:2,2"></meta_signal>

@@ -83,7 +83,8 @@ def main():
         parseLines(dom)
         printFooter()
     else:
-        print 'usages :'
-        print 'python proj_svg3d.py all in.svg3d [b1x b1y b1z b2x b2y b2z]> out.svg'
+        print >> sys.stderr, 'usages:'
+        print >> sys.stderr, '  python proj_svg3d.py all in.svg3d [b1x b1y b1z b2x b2y b2z]> out.svg'
+        sys.exit(1)
 
 main()

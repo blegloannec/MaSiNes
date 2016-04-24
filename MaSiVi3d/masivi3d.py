@@ -26,8 +26,9 @@ def init():
     # Pour fullscreen :
     #screen = pygame.display.set_mode((0,0),pygame.FULLSCREEN|pygame.HWSURFACE|pygame.DOUBLEBUF)
     #w,h = screen.get_size()
-    w,h = (800,800)
+    w,h = (1000,1000)
     screen = pygame.display.set_mode((w,h),pygame.DOUBLEBUF)
+    pygame.display.set_caption('MaSiVi3d')
     dx = w/2
     dy = h/2
     screen.fill(colors.white)
@@ -80,7 +81,7 @@ def drawLine((x1,y1,x2,y2,c)):
 def drawLines(lp):
     for s in lp:
         drawLine(s)
-    pygame.display.flip()
+    #pygame.display.flip()
 
 def projDraw():
     lp = projectLines(l)
@@ -97,8 +98,9 @@ def main():
     l = parseLines(dom)
     init()
     projDraw()
-    while 1:
+    while True:
         catch_event()
+        pygame.display.flip()
         clk.tick(30)
 
 main()

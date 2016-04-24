@@ -99,12 +99,3 @@ def inverse(M0):
                 line_diff(a,M,i,j)
                 line_diff(a,I,i,j)
     return I
-
-
-## TEST
-def main():
-    #M = [[2,3],[-1,5]]
-    M = [[2,3,6],[-1,5,8],[4,20,7]]
-    print inverse(M)
-
-    #main()
