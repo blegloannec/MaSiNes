@@ -3,7 +3,7 @@ Lightweight Signal Machine simulator
 
 MaSiNes is a lightweight *Signal Machine* simulator written in modular OCaml.
 
-*Signal Machines*, also referred to as *Abstract Geometrical Computation* model in the scientific literature, is a simple symbolic and geometric computation model working on the two-dimensional Euclidean plane as its space-time playground.
+*Signal Machines*, also referred to as *Abstract Geometrical Computation* model in the scientific literature, is a simple symbolic and geometric computation model working on the two-dimensional Euclidean plane as its space-time playground. Computation is achieved through continuous systems of constant-speed particles (*signals*) and collisions (initially inspired by the similar discrete systems used for computation in cellular automata). For more or less obvious reasons, this simulator only deals with signals of rational speed.
 
 MaSiNes was originally written for the sake of fun. It is however simple and fast and has been used by a former colleague in his research work, to generate figures for scientific articles and a PhD thesis.
 
