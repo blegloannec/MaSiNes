@@ -63,11 +63,11 @@ def l_swap(M,i,j):
     for k in range(w):
         M[i][k],M[j][k] = M[j][k],M[i][k]
 
-def first_non_zero(M,i):
-    w = len(M[0])
-    for j in range(w):
+def first_non_zero(M,j):
+    h = len(M)
+    for i in range(j,h):
         if M[i][j]!=0:
-            return j
+            return i
     return None
 
 def sline_prod(a,M,i):
@@ -87,9 +87,10 @@ def inverse(M0):
     I = id(n)
     for i in range(n):
         j0 = first_non_zero(M,i)
+        assert(j0!=None)
         if j0>i:
-            c_swap(M,i,j0)
-            c_swap(I,i,j0)
+            l_swap(M,i,j0)
+            l_swap(I,i,j0)
         a = 1.0/M[i][i]
         sline_prod(a,M,i)
         sline_prod(a,I,i)
